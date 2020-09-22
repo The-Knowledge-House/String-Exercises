@@ -6,6 +6,25 @@
 // DrEvil(1000000): 1000000 dollars (pinky)
 // answer below:
 
+//classroom answer 
+function drEvil(amount) {
+  //if amount is equal to 1000000 dollars then add pinky
+  if (amount === 1000000) {
+    return amount + " dollars (pinky)";
+  } else {
+    return amount + " dollars";
+  }
+}
+
+console.log(drEvil(1000000))
+
+
+//OR
+
+// const drEvil = amount => {
+//   if (amount === 1000000) return amount + " dollars (pinky)";
+//   return amount + " dollars";
+// }
 
 
 
@@ -20,9 +39,20 @@
 //mixUp('dog', 'dinner'): 'dig donner'
 //write answer below 
 
+//classroom answer 
 
+function mixUp(a, b) {
+  return b.slice(0, 2) + a.slice(2) + " " + a.slice(0, 2) + b.slice(2)
+    ;
+}
+console.log(mixUp('dog', 'dinner'))
 
+//OR
 
+// const mixUp = (arg1, arg2) =>
+//   `${arg2.slice(0, 2) + arg1.slice(2, arg1.length)}
+//    ${arg1.slice(0, 2) + arg2.slice(2, arg2.length)
+//   }`;
 
 
 //Create a function called fixStart
@@ -30,6 +60,20 @@
 //character have been replaced with '*', except for the character itself. 
 //fixstart('babble'): 'ba**le'
 //write answer below
+
+// function fixStart(a) {
+//   let position 
+
+// }
+
+//OR 
+
+function fixStart(a) {
+  let b = a.charAt(0);
+  return b + a.slice(1).replace(new RegExp(b, 'g'), '*');
+}
+
+console.log(fixStart("goggle"))
 
 
 
@@ -63,3 +107,18 @@
 //notBad('This movie is not so bad!'): 'This movie is good!'
 //notBad('This dinner is bad!'): 'This dinner is bad!'
 //write answer below 
+
+
+function notBad(input) {
+  let indexOfNot = input.indexOf('not');
+  let indexOfBad = input.indexOf('bad');
+
+  if ((indexOfNot == -1) || (indexOfBad == -1) || (indexOfBad < indexOfNot))
+    return input;
+  else
+    return input.slice(0, indexOfNot) + 'good' + input.slice(indexOfNot + 3);
+
+}
+
+console.log(notBad('This dinner is bad'));
+console.log(notBad('The movie is not bad')); 
