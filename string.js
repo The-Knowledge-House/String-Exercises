@@ -5,7 +5,11 @@
 // DrEvil(10): 10 dollars
 // DrEvil(1000000): 1000000 dollars (pinky)
 // answer below:
-
+const drEvil = (amount) => {
+    if (amount === 1000000) return amount + " dollars (pinky)";
+    return amount + " dollars";
+}
+console.log(drEvil(1000000));
 
 
 
@@ -19,7 +23,10 @@
 //mixUp('mix', 'pod'): 'pox mid'
 //mixUp('dog', 'dinner'): 'dig donner'
 //write answer below 
-
+const mixUp = (arg1, arg2) =>
+  `${arg2.slice(0, 2) + arg1.slice(2, arg1.length)} ${
+    arg1.slice(0, 2) + arg2.slice(2, arg2.length)
+  }`;
 
 
 
@@ -30,6 +37,10 @@
 //character have been replaced with '*', except for the character itself. 
 //fixstart('babble'): 'ba**le'
 //write answer below
+function fixStart(a) {
+    let b = a.charAt(0);
+    return b + a.slice(1).replace(new RegExp(b, 'g'), '*');
+  }
 
 
 
@@ -46,6 +57,19 @@
 //write answer below
 
 
+    function verbing(verb) {
+        if (verb.length < 3) {
+            return verb;
+        }
+        else if(verb.slice(-3) == 'ing') {
+          return verb+ 'ly';
+        } else {
+          return verb + 'ing';
+        }
+      }
+
+
+ 
 
 
 
@@ -63,3 +87,11 @@
 //notBad('This movie is not so bad!'): 'This movie is good!'
 //notBad('This dinner is bad!'): 'This dinner is bad!'
 //write answer below 
+function notBad(words) {
+    let notHere = words.indexOf('not');
+    let badHere = words.indexOf('bad');
+    if (notHere == -1 || badHere == -1 || badHere < notHere) {
+        return words;
+    } elese 
+    return words.slice(0, notHere) + 'good' + words.slice(badHere + 3);
+  }
