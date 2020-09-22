@@ -6,10 +6,15 @@
 // DrEvil(1000000): 1000000 dollars (pinky)
 // answer below:
 
-
-
-
-
+function drEvil(amount) {
+  //if amount is equal to 1000000 dollars then add pinky
+  if (amount === 1000000) {
+    return amount + " dollars (pinky)";
+  } else {
+    return amount + "dollars";
+  }
+}
+console.log(drEvil(1000000))
 
 
 //Create a function called mixUp
@@ -20,9 +25,13 @@
 //mixUp('dog', 'dinner'): 'dig donner'
 //write answer below 
 
+const mixUp = (arg1, arg2) =>
+  `${arg2.slice(0, 2) + arg1.slice(2, arg1.length)} ${arg1.slice(0, 2) + arg2.slice(2, arg2.length)
+  }`;
 
-
-
+function mixUp(a, b) {
+  return b.slice(0, 2) + a.slice(2) + " " + a.slice(0, 2) + b.slice(2);
+}
 
 
 //Create a function called fixStart
@@ -31,7 +40,10 @@
 //fixstart('babble'): 'ba**le'
 //write answer below
 
-
+function fixStart(s) {
+  let c = s.charAt(0);
+  return c + s.slice(1).replace(new RegExp(c, 'g'), '*');
+}
 
 
 
@@ -63,3 +75,14 @@
 //notBad('This movie is not so bad!'): 'This movie is good!'
 //notBad('This dinner is bad!'): 'This dinner is bad!'
 //write answer below 
+
+
+function notBad(input) {
+  let indexOfNot = input.indexOf('not');
+  let indexOfBad = input.indexOf('bad');
+  if ((indexOfNot == -1) || (indexOfBad == -1) || (indexOfBad < indexOfNot))
+    return input;
+  else
+    return input.slice(0, indexOfNot) + 'good' + input.slice(indexOfBad + 3);
+}
+
