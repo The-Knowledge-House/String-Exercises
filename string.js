@@ -6,7 +6,12 @@
 // DrEvil(1000000): 1000000 dollars (pinky)
 // answer below:
 
+const drEvil = amount => {
+    if (amount === 1000000) return amount + " dollars (pinky)";
+    return amount + " dollars";
+}
 
+console.log(drEvil(1000000));
 
 
 
@@ -20,7 +25,11 @@
 //mixUp('dog', 'dinner'): 'dig donner'
 //write answer below 
 
+let mixUp = (strOne, strTwo) => {
+    return strTwo.slice(0, 2) + strOne.slice(2) + " " + strOne.slice(0, 2) + strTwo.slice(2);
+}
 
+console.log(mixUp('dog', 'dinner'));
 
 
 
@@ -31,8 +40,13 @@
 //fixstart('babble'): 'ba**le'
 //write answer below
 
+let fixStart = (str) => {
+    let firstChar = str.substring(0, 1);
+    let bigString = str.slice(1);
+    return firstChar + bigString.replace(new RegExp(firstChar, 'g'), '*');
+}
 
-
+console.log(fixStart("babble"));
 
 
 
@@ -63,3 +77,14 @@
 //notBad('This movie is not so bad!'): 'This movie is good!'
 //notBad('This dinner is bad!'): 'This dinner is bad!'
 //write answer below 
+
+let notBad = (str) => {
+    let not = str.indexOf("not");
+    let bad = str.indexOf("bad");
+
+    // console.log(str.substring(0, str.length - 1));
+    if ((not == -1) || (bad == -1) || (bad < not)) return str;
+    return str.slice(0, not) + 'good' + str.slice(bad + 3);
+}
+
+console.log(notBad('This movie is not so bad!'));
