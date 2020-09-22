@@ -7,6 +7,13 @@
 // answer below:
 
 
+  let drEvil = ();
+  if (money === 1000000) {
+	return money + "dollars";
+} else {
+	return money + "dollars";
+}
+console.log(drEvil(1000000))
 
 
 
@@ -22,7 +29,9 @@
 
 
 
-
+function mixUp(x,y) {
+	return y.slice(0,2) + x.slice(2) + "" + x.slice(0,2) + y.slice(2);
+	};
 
 
 //Create a function called fixStart
@@ -30,6 +39,12 @@
 //character have been replaced with '*', except for the character itself. 
 //fixstart('babble'): 'ba**le'
 //write answer below
+
+function fixStart (x) {
+	let y = s.charAt(0);
+	return y + x.slice(1).replace(new RegExp(y, 'g'),'*');
+}
+
 
 
 
@@ -63,3 +78,27 @@
 //notBad('This movie is not so bad!'): 'This movie is good!'
 //notBad('This dinner is bad!'): 'This dinner is bad!'
 //write answer below 
+
+function notBad(a) {
+	let indexOfNot = input.indexOf('not');
+	let indexOfBad = indexOf('bad');
+
+	if ((indexOfNot == -1 || (indexOfBad == -1 || (indexOfBad < indexOfNot))
+		return input;
+	else
+		return input.slice(0), indexOfNot) + 'good' input .slice(indexOfBad + 3);
+
+	}
+console.log(notBad)
+
+
+
+//if a sentence says its not so bad, then its good.
+
+//if a sentence says it is bad then it is bad.
+
+
+
+
+
+
