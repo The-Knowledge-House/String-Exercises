@@ -6,10 +6,15 @@
 // DrEvil(1000000): 1000000 dollars (pinky)
 // answer below:
 
-
-
-
-
+function drEvil(amount){
+    //if amount is equal to 10000, add 'pinky'
+    if(amount === 1000000){
+        return amount + " dollars (pinky)";
+    } else {
+        return amount + " dollars";
+    }
+}
+console.log(drEvil(1000000))
 
 
 //Create a function called mixUp
@@ -20,8 +25,11 @@
 //mixUp('dog', 'dinner'): 'dig donner'
 //write answer below 
 
+function mixUp(a, b){
+    return b.slice(0, 2) + a.slice(2) + " " + a.slice(0, 2) + b.slice(2);
+}
 
-
+console.log(mixUp('mix', 'pod'));
 
 
 
@@ -31,8 +39,11 @@
 //fixstart('babble'): 'ba**le'
 //write answer below
 
-
-
+function fixStart(a){
+    let b = a.chartAt(0);
+    return b + a.slice(1).replace(new RegExp(b, 'g'), '*');
+}
+console.log(fixStart('babble'));
 
 
 
@@ -45,10 +56,18 @@
 //verbing('go'): 'go'
 //write answer below
 
+function verbing(verb){
+      if (verb > 3 && verb.includes('ing')){
+        return verb + "ly"
+    } else {
+        return verb + "ing"
+        }
+        return verb
+}
 
-
-
-
+console.log(verbing('swim'));
+console.log(verbing('swimming'));
+console.log(verbing('go'));
 
 
 
@@ -63,3 +82,18 @@
 //notBad('This movie is not so bad!'): 'This movie is good!'
 //notBad('This dinner is bad!'): 'This dinner is bad!'
 //write answer below 
+
+function notBad(input)
+{
+    let indexOfNot = input.indexOf('not');
+    let indexOfBad = input.indexOf('bad');
+
+    if ((indexOfNot == -1) || (indexOfBad == -1) || (indexOfBad < indexOfNot))
+        return input;
+    else
+        return input.slice(0, indexOfNot) + 'good' + input.slice(indexOfBad + 3);    
+}
+
+console.log(notBad('This dinner is bad'));
+
+console.log(notBad('This movie is not bad'));
