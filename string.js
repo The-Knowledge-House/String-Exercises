@@ -89,7 +89,16 @@ console.log(fixStart("goggle"))
 //verbing('go'): 'go'
 //write answer below
 
+function verbing(verb){
+	if (verb.length < 3){
+		return verb;
 
+	} else if (verb.slice(-3) == 'ing' {
+		return verb + 'ly';
+	} else {
+		return verb + 'ing';
+	}
+}
 
 
 
