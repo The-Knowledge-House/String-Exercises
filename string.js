@@ -7,7 +7,14 @@
 // answer below:
 
 
-
+function drEvil(amount) {
+    if (amount === 1000000) {
+      return amount + " dollars (pinky)";
+    } else {
+      return amount + "dollars";
+    }
+  }
+  console.log(drEvil(1000000))
 
 
 
@@ -21,8 +28,9 @@
 //write answer below 
 
 
-
-
+function mixUp(a, b) {
+    return b.slice(0, 2) + a.slice(2) + " " + a.slice(0, 2) + b.slice(2);
+  }
 
 
 //Create a function called fixStart
@@ -31,10 +39,10 @@
 //fixstart('babble'): 'ba**le'
 //write answer below
 
-
-
-
-
+function fixStart(s) {
+    let c = s.charAt(0);
+    return c + s.slice(1).replace(new RegExp(c, 'g'), '*');
+  }
 
 //Create a function called verbing. It should take a single argument, a string.
 //If it's length is at least 3, it should add 'ing' to its end, unless it already ends in 'ing',
@@ -47,7 +55,14 @@
 
 
 
-
+function verbing(word) {
+    if (word.length < 3) return word;
+    if (word.slice(-3) == 'ing') {
+      return word + 'ly';
+    } else {
+      return word + 'ing';
+    }
+  }
 
 
 
@@ -63,3 +78,15 @@
 //notBad('This movie is not so bad!'): 'This movie is good!'
 //notBad('This dinner is bad!'): 'This dinner is bad!'
 //write answer below 
+
+function notBad(sentence) {
+    let notIndex = sentence.indexOf('not');
+    let badIndex = sentence.indexOf('bad');
+    if (notIndex == -1 || badIndex == -1 || badIndex < notIndex) return sentence;
+    return sentence.slice(0, notIndex) + 'good' + sentence.slice(badIndex + 3);
+  }function notBad(sentence) {
+    let notIndex = sentence.indexOf('not');
+    let badIndex = sentence.indexOf('bad');
+    if (notIndex == -1 || badIndex == -1 || badIndex < notIndex) return sentence;
+    return sentence.slice(0, notIndex) + 'good' + sentence.slice(badIndex + 3);
+  }
