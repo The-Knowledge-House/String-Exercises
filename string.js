@@ -6,10 +6,12 @@
 // DrEvil(1000000): 1000000 dollars (pinky)
 // answer below:
 
+function drEvil(amount){
+    return (amount === 1000000) ? amount + " dollars (pinky)": amount + " dollars";
+}
 
-
-
-
+// console.log(drEvil(1000000))
+// console.log(drEvil(1000))
 
 
 //Create a function called mixUp
@@ -20,10 +22,14 @@
 //mixUp('dog', 'dinner'): 'dig donner'
 //write answer below 
 
+function mixUp(str1, str2){
+    let result = "";
+    result = `${str2.slice(0, 2)}${str1.slice(2)} ${str1.slice(0, 2)}${str2.slice(2)}`
 
+    return result ;
+}
 
-
-
+// console.log(mixUp("mixing", "pods"))
 
 //Create a function called fixStart
 //It should take a single argument, a string, and return a version where all occurences of its first
@@ -31,10 +37,18 @@
 //fixstart('babble'): 'ba**le'
 //write answer below
 
+function fixStart(str){
+    let firstChar = str[0];
+    let strToArr = str.split("");
+    for(let i = 1; i < strToArr.length; i++){
+        if(firstChar === strToArr[i]){
+            strToArr[i] = '*';
+        }
+    }
+    return strToArr.join("");
+}
 
-
-
-
+console.log(fixStart("babble"))
 
 //Create a function called verbing. It should take a single argument, a string.
 //If it's length is at least 3, it should add 'ing' to its end, unless it already ends in 'ing',
@@ -45,12 +59,19 @@
 //verbing('go'): 'go'
 //write answer below
 
+function verbing(str){
+    if(str.length > 3){
+        if(str.endsWith("ing")){
+            return str + "ly";
+        }
+        return str + "ing";
+    }
+    return str;
+}
 
-
-
-
-
-
+// console.log(verbing("swim"))
+// console.log(verbing("swimming"))
+// console.log(verbing("go"))
 
 //Create a function called notBad that takes a single argument, a string
 //It should find the first appearance of the substring 'not' and 'bad'
@@ -63,3 +84,17 @@
 //notBad('This movie is not so bad!'): 'This movie is good!'
 //notBad('This dinner is bad!'): 'This dinner is bad!'
 //write answer below 
+
+function notBad(str){
+    if(str.includes("not") && str.includes("bad")){
+        let idxofNot = str.indexOf("not")
+        let idxofBad = str.indexOf("bad")
+        if( idxofNot < idxofBad){
+            return str.slice(0, idxofNot) + "good" + str.slice(idxofBad +3);
+        }
+    }
+    return str;
+}
+
+// console.log(notBad('This dinner is not that bad! I love it'))
+// console.log(notBad('This dinner is really bad!'))
