@@ -7,7 +7,7 @@
 // answer below:
 
 function DrEvil(amount){
-    if  (parseInt(amount) === 10000000) {
+    if  (parseInt(amount) === 1000000) {
     return amount + "dollars" + "pinky"
     }
     else  {
@@ -16,9 +16,11 @@ function DrEvil(amount){
     }
 
 
-    
-    console.log(DrEvil)
 }
+    console.log(DrEvil(10))
+    console.log(DrEvil(1000000))
+
+
 
 
 
