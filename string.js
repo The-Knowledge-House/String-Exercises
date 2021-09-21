@@ -1,3 +1,8 @@
+//My partners were Anthony Tapia and Jason Young. Without them I would have not done this (cries in new at this)
+
+
+
+
 //DrEvil
 //create a function called DrEvil. It should take a single argument, an amount
 //and return '<amount> dollars', except it will add '(pinky)' at the end if 
@@ -5,8 +10,14 @@
 // DrEvil(10): 10 dollars
 // DrEvil(1000000): 1000000 dollars (pinky)
 // answer below:
-
-
+function DrEvil(amount) {
+if (amount === 100000) {
+    return amount + " dollars (pinky)";
+} else {
+    return amount + " dollars";
+}
+}
+console.log(DrEvil(1500))
 
 
 
@@ -19,6 +30,10 @@
 //mixUp('mix', 'pod'): 'pox mid'
 //mixUp('dog', 'dinner'): 'dig donner'
 //write answer below 
+function mixUp(str1, str2) {
+    return str2.slice(0,2) + str1.slice(2) + " " + str2.slice(0,2) + str1.slice(2);
+}
+console.log(mixUp('bill','pool'));
 
 
 
@@ -30,7 +45,11 @@
 //character have been replaced with '*', except for the character itself. 
 //fixstart('babble'): 'ba**le'
 //write answer below
-
+function fixStart(babble) {
+    let cattle = babble.charAt(0);
+    return cattle + babble.slice(1).replace(new RegExp(cattle, 'g'), '*');
+}
+console.log(fixStart('babble')); //didn't work   //UPDATE: chaAt ws missing the letter r, and babble was missing the '' signs at console log
 
 
 
@@ -44,7 +63,16 @@
 //verbing('swimming'): 'swimmingly'
 //verbing('go'): 'go'
 //write answer below
+function verbing(word) {
+    if (word.length < 3) return word;
+    if (word.slice(-3) == 'ing') {
+      return word + 'ly';
+    } else {
+      return word + 'ing';
+    }
+  }
 
+  console.log(verbing("embracing"));
 
 
 
@@ -63,3 +91,14 @@
 //notBad('This movie is not so bad!'): 'This movie is good!'
 //notBad('This dinner is bad!'): 'This dinner is bad!'
 //write answer below 
+function notBad(sentence) {
+  var notIndex = sentence.indexOf('not');
+  var badIndex = sentence.indexOf('bad');
+  if (notIndex == -1 || badIndex == -1 || badIndex < notIndex) return sentence;
+  return sentence.slice(0, notIndex) + 'good' + sentence.slice(badIndex + 3);
+}
+
+console.log(notBad("This dinner is not that bad!"));
+console.log(notBad("This movie is not so bad"));
+console.log(notBad("This dinner is bad!"));
+//NOTE: I found it online and still don't understand the code. Most likely by the end of the week I will get it.
