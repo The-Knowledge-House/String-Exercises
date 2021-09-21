@@ -6,6 +6,21 @@
 // DrEvil(1000000): 1000000 dollars (pinky)
 // answer below:
 
+function DrEvil(amount){
+    if  (parseInt(amount) === 1000000) {
+    return amount + "dollars" + "pinky"
+    }
+    else  {
+
+        return amount + "dollars"
+    }
+
+
+}
+    console.log(DrEvil(10))
+    console.log(DrEvil(1000000))
+
+
 
 
 
@@ -20,6 +35,13 @@
 //mixUp('dog', 'dinner'): 'dig donner'
 //write answer below 
 
+function mixUP( str1, str2){
+    let a = str1.slice(0,2)
+    let b = str2.slice(0,2)
+    return b + str1[2] + " " + a + str2[2]
+}
+
+console.log(mixUP("mix", "pod"))
 
 
 
@@ -31,6 +53,11 @@
 //fixstart('babble'): 'ba**le'
 //write answer below
 
+function fixStart(str) {
+    let i = str.slice(1)
+    return str[0] + i.replace(/b/g, '*');
+  }
+  console.log(fixStart("babble"));
 
 
 
@@ -46,7 +73,18 @@
 //write answer below
 
 
-
+function verbing(word){
+    if (word.length < 3) 
+    return word;
+    if(word.slice((-3) == 'ing')){
+        return word + 'ly';
+    } else{
+        return word + 'ing'
+    }
+}
+console.log(verbing('swim'))
+console.log(verbing('swimming'))
+console.log('go');
 
 
 
